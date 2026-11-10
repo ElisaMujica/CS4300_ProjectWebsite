@@ -1,9 +1,60 @@
-﻿* {
-    margin: 0;
-    padding: 0;
+﻿body {
+    margin: 30px;
+    padding: 20px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     scroll-behavior: smooth;
     list-style: none;
+    background-color: #265999;
+}
+
+#intro{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    color: white;
+}
+
+.member-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.member-info{
+    display: flex;
+    flex-direction:column;
+    gap: 1px;
+    flex: 1;
+}
+
+#icons{
+    width: 500px;
+}
+
+#people-image{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.member-content p{
+    flex: 1;
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    background-color: #d5ad36;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
