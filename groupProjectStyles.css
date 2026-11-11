@@ -1,4 +1,4 @@
-﻿body {
+body {
     margin: 30px;
     padding: 20px;
     box-sizing: border-box;
@@ -16,6 +16,10 @@
     color: white;
 }
 
+#intro h1{
+    font-size: 100px;
+}
+
 .member-content{
     display: flex;
     flex-direction: row;
@@ -28,6 +32,15 @@
     flex-direction:column;
     gap: 1px;
     flex: 1;
+}
+
+.member-info h6{
+    margin: 0 0 5px 0;
+    color: white;
+}
+.member-info p{
+    margin: 10px;
+    color: white;
 }
 
 #icons{
@@ -46,15 +59,24 @@
 }
 
 .button {
+    display: inline-block;
     height: 50px;
     width: 200px;
+    box-sizing: border-box;
+
     background-color: #d5ad36;
     color: #ffffff;
+
     padding: 12px 24px;
     border: none;
     border-radius: 25px;
-    font-size: 14px;
+
+    font-size: 18px;
     font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
     cursor: pointer;
     transition: 0.3s;
 }
+
