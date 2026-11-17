@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CS 4300 HW2 EM: My personal website</title>
+    <style>
+        body {
+            background-image: url("background_image.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 50px;
+            margin: 20px;
+        }
+
+        .clock {
+            font-family: Courier New, Courier, monospace;
+            font-size: 30px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                margin: 0;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+    </style>
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
+
+            document.getElementById("clock").textContent = timeString;
+        }
+
+        updateClock;
+
+        setInterval(updateClock, 1000);
+    </script>
+</head>
+<body>
+    <div id="clock" class="clock">00:00:00</div>
+    <h1 style="font-family:Helvetica;">Elisa Mujica</h1>
+    <p>My name is Elisa Mujica. I am a computer science major at UHD and expected to graduate December 2026. I am a results-driven project leader with a strong focus on sustainability and community-driven initiatives. I have demonstrated success in resource management, budgeting, and cross-functional team coordination as a student organization president and secretary. I also have experience in overseeing web development lifecycles from conception to deployment. I am seeking to leverage robust organizational and technical problem-solving skills in an entry-level project management position. Outside of work, I juggle a variety of hobbies such as gardening, calligraphy, and tennis. Gardening is tied more to my interests in sustainability and garnering a sense of community. Calligraphy is something that helps me relax and tennis keeps me active. I leverage all of these aspects of my life to become a balanced person. These experiences have helped me develop adaptability, creativity, leadership, and communication skills that I can apply both personally and professionally. I enjoy working with others, taking on new challenges, and finding practical solutions to problems while continuing to grow my skills and contribute positively to the communities around me. I value opportunities to learn, lead, collaborate, and make a meaningful impact.</p>
+
+    <img src="me.jpg" alt="Picture of Elisa">
+    <a href="www.linkedin.com/in/elisa-mujica-103010201">My LinkedIn</a>
+
+    <h2 style="font-family:Helvetica;">Programming Languages</h2>
+    <table border="1">
+
+        <caption><strong>Programming Languages</strong></caption>
+
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Python</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>C++</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Beginner</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 style="font-family:Helvetica;">Hobbies Outside of Computer Science</h2>
+    <ul>
+        <li>Sports </li>
+        <ol>
+            <li>Tennis</li>
+            <li>Jujitsu</li>
+            <li>Roller Blading</li>
+        </ol>
+        <li>Arts</li>
+        <ol>
+            <li>Calligraphy</li>
+            <li>Animation</li>
+        </ol>
+        <li>Community</li>
+        <ol>
+            <li>Gardening</li>
+            <li>Cycling</li>
+            <li>Urban Projects</li>
+        </ol>
+    </ul>
+</body>
+</html>
