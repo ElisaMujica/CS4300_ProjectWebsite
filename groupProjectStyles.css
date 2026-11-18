@@ -117,3 +117,38 @@ body {
     transition: 0.3s;
 }
 
+
+/* Graduation Subpage */
+
+.grad-section {
+    background-color: #f2f5f8;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 15px;
+}
+
+    .grad-section h2 {
+        color: #265999;
+        font-size: 28px;
+    }
+
+    .grad-section h3 {
+        color: #265999;
+        margin-bottom: 5px;
+    }
+
+    .grad-section p {
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+    .grad-section a {
+        color: #265999;
+        font-weight: bold;
+    }
+
+    .grad-section li {
+        margin-bottom: 12px;
+    }
+
