@@ -9,22 +9,59 @@ body {
     background-color: #265999;
 }
 
+.countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
 #intro{
     display: flex;
     flex-direction:column;
     align-items: center;
     color: white;
+    font-size: 30px;
+    -webkit-text-stroke: 2px #d5ad36;
 }
 
 #intro h1{
     font-size: 100px;
 }
 
+.navbar {
+    background-color: #d5ad36;
+    padding: 15px;
+}
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+        .navbar a:hover {
+            color: lightblue;
+        }
+
+
 .member-content{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    padding: 30px;
 }
 
 .member-info{
