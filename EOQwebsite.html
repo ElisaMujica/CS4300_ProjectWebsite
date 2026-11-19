@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edwin Olvera Quintos</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            /* FONT 1: serif font for the paragraphs */
+            font-family: Georgia, "Times New Roman", serif;
+            /* TEXT COLOR: dark charcoal for regular text */
+            color: #2b2f36;
+        }
+
+        /* Left side: my photo */
+        .photo {
+            width: 42%;
+            background-image: url("EOQ_photo.jpg");
+            background-size: cover;
+            background-position: center top;
+            border-right: 5px solid #c5bca7;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        /* Right side: BACKGROUND IMAGE, a small pattern repeated across the panel */
+        .content {
+            width: 58%;
+            padding: 60px 70px;
+            background-color: #dde1e6;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAABEElEQVR4nN3WTwvCMAyH4VfxINtOgvj9P5ngQRDBkxsePRTK3J+ua5ek+DvlFB7SBLq73u6UlL014Cdt9ykI1HafujqWAnIaCnkyr6EEUF+DOWigwRY01mAImtRgBZrTYAIKaNAHhTUogxY1aIJiNKiBIjXogOI1KIBWaZAGrdUgCkrQIAdK0yAEStYgAcrRAIdNEI/nyxVNXeVo2GRCXgO82y6zm/0XdpB/BDV15evL+ZTZLXep3U1lLnI/WRPKvPDJpIMkNCSDhDSkgeQ0JIBENawFSWtYBVLQEA/S0RAJUtMQA9LUsAhS1hAG6WsIgEw0zIGsNEyCDDWMQbYaBiBzDX1QCRo8qBANDlSOBvgCj0yKC/fySz8AAAAASUVORK5CYII=");
+            background-repeat: repeat;
+        }
+
+        .text {
+            max-width: 560px;
+        }
+
+        /* FONT 2: bold sans-serif for my name and headings */
+        h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 800;
+            font-size: 64px;
+            line-height: 1.02;
+            letter-spacing: -1.5px;
+            /* TEXT COLOR: navy blue for my name */
+            color: #1f3a5f;
+            margin: 0 0 20px 0;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-size: 18px;
+            /* TEXT COLOR: muted brown for the subtitle */
+            color: #7a5a1f;
+            margin: 0;
+            padding-bottom: 22px;
+            border-bottom: 1px solid #9aa1ab;
+        }
+
+        h2 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 22px;
+            /* TEXT COLOR: brown for section headings */
+            color: #7a5a1f;
+            margin: 30px 0 12px 0;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.65;
+            margin: 0 0 16px 0;
+        }
+
+        /* TEXT COLOR: navy for highlighted words */
+        .highlight {
+            color: #1f3a5f;
+            font-weight: bold;
+        }
+
+        a {
+            color: #7a5a1f;
+            font-weight: bold;
+        }
+
+        /* FONT 3: monospace font for the footer */
+        .footer {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 13px;
+            color: #5c6370;
+            margin-top: 28px;
+        }
+
+        /* ===== HOMEWORK 4, ITEM 1: BOX MODEL =====
+           Every box has four layers: content, padding, border, and margin. */
+        .facts {
+            margin: 28px 0;                 /* MARGIN: space outside the border */
+            border: 2px solid #1f3a5f;      /* BORDER: navy line around the box */
+            padding: 20px 24px;             /* PADDING: space between border and content */
+            background-color: #ffffff;      /* content area color */
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(31, 58, 95, 0.12);
+        }
+
+        .facts h3 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #1f3a5f;
+            font-size: 18px;
+            margin: 0 0 12px 0;
+        }
+
+        .fact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .fact {
+            flex: 1 1 140px;
+            margin: 0;                      /* MARGIN */
+            border: 1px solid #c5bca7;      /* BORDER */
+            padding: 12px 14px;             /* PADDING */
+            background-color: #f6f3ec;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.4;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .fact strong {
+            display: block;
+            color: #7a5a1f;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        /* ===== HOMEWORK 4, ITEM 3: ANIMATION ===== */
+
+        /* Name slides up and fades in when the page loads */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Photo fades in */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* Underline grows from left to right under the subtitle */
+        @keyframes growLine {
+            from { width: 0; }
+            to   { width: 100%; }
+        }
+
+        .photo {
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        h1 {
+            animation: slideUp 0.9s ease-out;
+        }
+
+        .subtitle {
+            border-bottom: none;
+            position: relative;
+            animation: slideUp 0.9s ease-out 0.2s both;
+        }
+
+        .subtitle::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: #7a5a1f;
+            animation: growLine 1.2s ease-out 0.6s both;
+        }
+
+        .facts {
+            animation: slideUp 0.9s ease-out 0.4s both;
+        }
+
+        /* Fact boxes lift up when you hover over them */
+        .fact:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(31, 58, 95, 0.18);
+        }
+
+        /* Turn off motion for people who set "reduce motion" on their computer */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+
+        /* ===== HOMEWORK 4, ITEM 2: MEDIA QUERIES ===== */
+
+        /* Medium screens (tablets / small laptops): smaller name and padding */
+        @media (max-width: 1100px) {
+            .content { padding: 50px 40px; }
+            h1 { font-size: 54px; }
+        }
+
+        /* Small screens (phones): photo goes on top, text goes underneath */
+        @media (max-width: 800px) {
+            body { display: block; }
+            .photo { width: 100%; height: 420px; position: static; border-right: none; border-bottom: 5px solid #c5bca7; }
+            .content { width: 100%; padding: 36px 20px; }
+            h1 { font-size: 46px; }
+            .fact { flex-basis: 100%; }    /* fact boxes stack in one column */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="photo" role="img" aria-label="Photo of Edwin Olvera Quintos"></div>
+
+    <div class="content">
+        <div class="text">
+
+            <h1>Edwin<br>Olvera<br>Quintos</h1>
+            <p class="subtitle">Computer science student at the University of Houston-Downtown</p>
+
+            <div class="facts">
+                <h3>Quick facts</h3>
+                <div class="fact-row">
+                    <p class="fact"><strong>Major</strong>B.S. Computer Science</p>
+                    <p class="fact"><strong>Graduating</strong>May 2027</p>
+                    <p class="fact"><strong>Languages</strong>English &amp; Spanish</p>
+                </div>
+            </div>
+
+            <h2>About me</h2>
+
+            <p>
+                Hi, I'm Edwin Olvera Quintos. I'm a junior at the University of
+                Houston-Downtown working toward a <span class="highlight">Bachelor of Science
+                in Computer Science</span>, and I expect to graduate in May 2027. I'm based
+                in Houston and speak both English and Spanish fluently.
+            </p>
+
+            <p>
+                My computer science coursework has included parallel computing and
+                bioinformatics, and I'm especially interested in
+                <span class="highlight">artificial intelligence</span> and
+                <span class="highlight">robotics</span>. <span class="highlight">Python</span>
+                is the language I keep building my skills in, both for my classes and on my
+                own time.
+            </p>
+
+            <p>
+                I also have customer-facing experience from working as a sales advisor and
+                customer service representative at <span class="highlight">Best Buy</span> in
+                Houston. That job had me helping customers every day, often explaining
+                technology in plain, simple language so they could make the right choice for
+                their needs.
+            </p>
+
+            <p>
+                Outside of school, I like to read a lot, and I enjoy spending time outdoors
+                whenever I get the chance. Being outdoors is a welcome break from the hours I
+                spend in front of a screen for school. I also collect comic books, especially
+                <span class="highlight">Invincible</span>. Between a good book, a new comic,
+                and some time outside, I always have something to look forward to after a
+                long week of classes and coding.
+            </p>
+
+            <p>
+                <strong>Thanks for taking the time to visit my page.</strong>
+                <a href="https://www.linkedin.com/">Connect with me on LinkedIn</a>
+            </p>
+
+            <p class="footer">&copy; 2026 Edwin Olvera Quintos</p>
+
+        </div>
+    </div>
+
+</body>
+</html>
